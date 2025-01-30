@@ -1,5 +1,5 @@
 # Ignore all 'work' folders
-**/work/
+**/work/*
 
 
 # Ignore simulation and build artifacts
