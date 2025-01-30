@@ -7,6 +7,7 @@
 vcom design.vhd        # Compile VHDL file
 vlog design.v          # Compile Verilog file
 vcom -refresh          # Recompile all files
+vcom */*.vhd           # Compile  all files
 ```
 
 ### Simulate Design
