@@ -18,6 +18,8 @@ run 100ns                                 # Run for 100ns
 run -all                                  # Run until completion
 restart -force                            # Restart simulation
 quit -force                               # Exit ModelSim
+# or simply run the do file in the waves folder
+do wave/<filename>.do
 ```
 
 ## 2. Waveform Debugging
@@ -61,6 +63,7 @@ project addfile design.vhd  # Add a file to the project
 ### Remove Files from Project
 ```sh
 project removefile design.vhd  # Remove a file from the project
+project close               # closing the current project
 ```
 
 ### Save and Close Project
