@@ -1,3 +1,6 @@
+vcom ALU/FullAdder.vhd
+vcom ALU/MUX4to1.vhd
+vcom ALU/ALU.vhd
 vsim work.ALU
 add wave *
 
