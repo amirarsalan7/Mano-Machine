@@ -1,0 +1,36 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+-- use IEEE.numeric_std.all;
+
+entity MemoryCell is
+    generic (
+        cell_size: integer := 15
+    );    
+    port (
+        memory_enable, R_flag: in std_logic;
+        input_data: in std_logic_vector(cell_size downto 0);
+        output_data: out std_logic_vector(cell_size downto 0)
+    );
+end entity MemoryCell;
+
+architecture behavorial of MemoryCell is
+    component BC is
+        port (
+            cell_input, R, sel: in std_logic;
+            Cell_output: out std_logic
+        );
+    end component BC;
+
+begin
+    
+
+    MemoryCell_GEN: for i in cell_size downto 0 generate
+        cell: BC port map (
+            cell_input => input_data(i),
+            R => R_flag,
+            sel => memory_enable,
+            Cell_output => output_data(i)
+        );
+    end generate;
+    
+end architecture behavorial;
