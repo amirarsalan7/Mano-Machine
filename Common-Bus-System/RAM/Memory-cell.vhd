@@ -3,13 +3,10 @@ use IEEE.std_logic_1164.all;
 -- use IEEE.numeric_std.all;
 
 entity MemoryCell is
-    generic (
-        cell_size: integer := 15
-    );    
     port (
         memory_enable, R_flag: in std_logic;
-        input_data: in std_logic_vector(cell_size downto 0);
-        output_data: out std_logic_vector(cell_size downto 0)
+        input_data: in std_logic_vector(15 downto 0);
+        output_data: out std_logic_vector(15 downto 0)
     );
 end entity MemoryCell;
 
@@ -24,7 +21,7 @@ architecture behavorial of MemoryCell is
 begin
     
 
-    MemoryCell_GEN: for i in cell_size downto 0 generate
+    MemoryCell_GEN: for i in 15 downto 0 generate
         cell: BC port map (
             cell_input => input_data(i),
             R => R_flag,
