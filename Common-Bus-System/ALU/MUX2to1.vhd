@@ -19,3 +19,11 @@ begin
     q <= (input(0) and (NOT sel)) or (input(1) and sel);
     
 end architecture Behavorial;
+
+-- MUX2to1 is a multiplexer that selects one of the two input signals
+-- based on the value of the selector 'sel'.
+--
+-- Truth Table:
+-- sel | q
+--  0  | input(0)
+--  1  | input(1)

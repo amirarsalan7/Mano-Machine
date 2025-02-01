@@ -33,3 +33,21 @@ begin
     
     
 end architecture Behavorial;
+
+-- LOGIC: 16-bit logical operation unit using 1-bit logic elements.
+--
+--
+-- Operation:
+--   - Uses 16 instances of `logicX1`, each handling one bit.
+--   - Each `logicX1` unit performs a logical operation on a corresponding bit of A and B.
+--   - The operation is selected using the `Sel` signal.
+
+-- Truth Table (for each bit pair A(i), B(i)):
+--   S1 S0 | Operation  | Output E(i)
+--  ---------------------------------
+--    0  0 | A AND B   | A(i) AND B(i)
+--    0  1 | A OR B    | A(i) OR B(i)
+--    1  0 | A XOR B   | A(i) XOR B(i)
+--    1  1 | NOT A     | NOT A(i)
+--
+--   The result is computed bitwise for all 16 bits.

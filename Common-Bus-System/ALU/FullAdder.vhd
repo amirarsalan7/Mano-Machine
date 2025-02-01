@@ -22,3 +22,24 @@ begin
     
     
 end architecture Behavorial;
+
+
+-- FullAdder: 1-bit full adder circuit.
+--
+-- Ports:
+--   cin  : Carry input.
+--   A, B : Single-bit inputs to be added.
+--   S    : Sum output (A XOR B XOR cin).
+--   cout : Carry output (generated when at least two inputs are '1').
+--
+-- Truth Table:
+--   A  B  Cin | S  Cout
+--  ---------------------
+--   0  0   0  | 0    0
+--   0  0   1  | 1    0
+--   0  1   0  | 1    0
+--   0  1   1  | 0    1
+--   1  0   0  | 1    0
+--   1  0   1  | 0    1
+--   1  1   0  | 0    1
+--   1  1   1  | 1    1

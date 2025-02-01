@@ -31,3 +31,8 @@ begin
     end generate;
     
 end architecture behavorial;
+
+
+
+-- MemoryCell: A 16-bit memory cell using BC latches to store data.
+-- The output is controlled by the memory_enable and R_flag signals.

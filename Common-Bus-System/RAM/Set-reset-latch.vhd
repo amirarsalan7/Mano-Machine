@@ -18,3 +18,13 @@ begin
     
     
 end architecture behavorial;
+
+-- SR Latch can store data
+--
+-- Truth Table for SR Latch:
+-- | S (Set) | R (Reset) | Q (Current State) | Q' (Inverse State) |
+-- |---------|-----------|-------------------|---------------------|
+-- |    0    |     0     |         0         |          1          | (Initial state)
+-- |    0    |     1     |         0         |          1          | (Reset state)
+-- |    1    |     0     |         1         |          0          | (Set state)
+-- |    1    |     1     |   Invalid State   |   Invalid State     | (undefined, not allowed)

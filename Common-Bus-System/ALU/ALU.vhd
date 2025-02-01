@@ -105,3 +105,48 @@ begin
 
     
 end architecture Behavorial;
+
+
+-- ALU: 16-bit Arithmetic and Logic Unit (ALU)
+--
+--
+-- Operation:
+--   - The ALU performs arithmetic, logic, and shift operations.
+--   - It consists of three main functional blocks:
+--       1. Arithmetic block (Arithmatic): Handles addition, subtraction, etc.
+--       2. Logic block (LOGIC): Performs bitwise AND, OR, XOR, and NOT.
+--       3. Shift block (ShiftLR): Performs left and right logical shifts.
+--   - A 4-to-1 multiplexer selects the final output based on the upper two bits of S.
+--
+-- Control Signals (S[3:0]):
+--   S[3:2]  | Operation
+--  ------------------------
+--      00   | Arithmetic (Add/Sub)
+--      01   | Logic (AND, OR, XOR, NOT)
+--      10   | Right Shift
+--      11   | Left Shift
+
+
+
+
+
+
+
+-- ALU Control Signals and Operations:
+--   S[3:2]  | S[1:0] | Operation        | Description                        
+--  -------------------------------------------------------------------
+--      00   | 00     | Addition         | F = A + B                          
+--      00   | 01     | Subtraction      | F = A - B                          
+--      00   | 10     | Add with Carry   | F = A + B + cin                    
+--      00   | 11     | Sub with Borrow  | F = A - B - cin                    
+--      01   | 00     | AND              | F = A AND B                        
+--      01   | 01     | OR               | F = A OR B                         
+--      01   | 10     | XOR              | F = A XOR B                        
+--      01   | 11     | NOT A            | F = NOT A                          
+--      10   | XX     | Right Shift      | F = A >> 1 (Logical Shift)         
+--      11   | XX     | Left Shift       | F = A << 1 (Logical Shift)         
+
+-- Notes:
+-- - 'cin' (carry-in) is only relevant for arithmetic operations.
+-- - 'XX' in S[1:0] for shifts means that these bits are ignored.
+-- - 'E' (carry-out) is only meaningful for arithmetic operations.

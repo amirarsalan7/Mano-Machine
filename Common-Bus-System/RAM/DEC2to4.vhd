@@ -22,3 +22,17 @@ begin
      
     
 end architecture Behavorial;
+
+
+-- 2-to-4 Decoder Truth Table:
+--  Enable | W1 W0 | Y3 Y2 Y1 Y0
+-- --------------------------------
+--     0   |  X  X | 0  0  0  0  (Disabled)
+--     1   |  0  0 | 0  0  0  1  
+--     1   |  0  1 | 0  0  1  0  
+--     1   |  1  0 | 0  1  0  0  
+--     1   |  1  1 | 1  0  0  0  
+
+-- Notes:
+-- - The decoder is only active when 'enable' is 1.
+-- - If 'enable' is 0, all outputs are 0.

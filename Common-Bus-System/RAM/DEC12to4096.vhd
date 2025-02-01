@@ -53,3 +53,12 @@ begin
     end generate GEN_Level3;
 
 end architecture Behavorial;
+
+
+
+-- Truth Table for 12-to-4096 Decoder:
+--
+-- For a 12-bit input (addr), one of the 4096 outputs is set high based on the input value.
+-- All other outputs remain low.
+--
+-- #AND IM NOT GONNA WRITE YOU GUYS A 4096*4096 TRUTH TABLE IN THIS FILE.#

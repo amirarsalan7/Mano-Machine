@@ -31,3 +31,30 @@ begin
     
     
 end architecture behavorial;
+
+-- BC: This is a binary cell circuit (BC), used for memory cells in RAM.
+
+-- Truth Table for Binary Cell (SR Latch for RAM):
+
+-- | Read_Write_Flag | Select Flag | S (Set) | R (Reset) | Q (Current State) | Q' (Inverse State) | Cell_output | Action                                  |
+-- |-----------------|-------------|---------|-----------|-------------------|---------------------|-------------|-----------------------------------------|
+-- |       0         |      0      |    0    |     0     |        Q_prev     |         Q'_prev     |    Q_prev   | Read mode, output current state         |
+-- |       0         |      0      |    0    |     1     |        0          |          1          |      0      | Reset state in read mode                |
+-- |       1         |      0      |    1    |     0     |        1          |          0          |      1      | Write mode, set state                   |
+-- |       1         |      0      |    0    |     1     |        0          |          1          |      0      | Write mode, reset state                 |
+-- |       0         |      1      |    0    |     0     |        Q_prev     |         Q'_prev     |    Q_prev   | Read mode with select flag enabled      |
+-- |       0         |      1      |    0    |     1     |        0          |          1          |      0      | Reset state with select flag enabled    |
+-- |       1         |      1      |    1    |     0     |        1          |          0          |      1      | Write mode with select flag enabled     |
+-- |       1         |      1      |    0    |     1     |        0          |          1          |      0      | Write mode, reset state with select flag|
+
+-- Binary Cell Behavior (SR Latch using binary values for RAMs):
+-- | Read_Write_Flag | Select Flag | S (Set) | R (Reset) | Q (Current State) | Q' (Inverse State) |
+-- |-----------------|-------------|---------|-----------|-------------------|---------------------|
+-- |       0         |      0      |    0    |     0     |        0          |         1           | (Initial read state)
+-- |       0         |      0      |    0    |     1     |        0          |         1           | (Read reset state)
+-- |       1         |      0      |    1    |     0     |        1          |         0           | (Write set state)
+-- |       1         |      0      |    0    |     1     |        0          |         1           | (Write reset state)
+-- |       0         |      1      |    0    |     0     |        0          |         1           | (Read state with select flag)
+-- |       0         |      1      |    0    |     1     |        0          |         1           | (Read reset state with select flag)
+-- |       1         |      1      |    1    |     0     |        1          |         0           | (Write set state with select flag)
+-- |       1         |      1      |    0    |     1     |        0          |         1           | (Write reset state with select flag)

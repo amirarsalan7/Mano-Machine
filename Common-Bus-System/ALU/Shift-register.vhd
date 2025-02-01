@@ -38,3 +38,24 @@ begin
     
     
 end architecture;
+
+
+-- ShiftLR: 16-bit logical shifter using 2-to-1 multiplexers.
+--
+-- Ports:
+--   Shift_dir : Shift direction control signal.
+--               '0' for right shift, '1' for left shift.
+--   A         : 16-bit input vector.
+--   H         : 16-bit output vector (shifted result).
+--
+-- Operation:
+--   - The input A is extended with two zero-padding bits.
+--   - Each bit of H is selected using a 2-to-1 multiplexer.
+--   - If Shift_dir = '0', the bit is taken from the previous position (right shift).
+--   - If Shift_dir = '1', the bit is taken from the next position (left shift).
+--
+-- Truth Table (Example for A = "1001100110011001"):
+--   Shift_dir | Output (H)
+--  --------------------------------
+--      0      | 0100110011001100  (Right shift)
+--      1      | 0011001100110010  (Left shift)

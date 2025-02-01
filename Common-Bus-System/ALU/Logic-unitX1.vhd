@@ -37,3 +37,30 @@ begin
     );
     
 end architecture Behavorial;
+
+
+
+
+-- logicX1: 1-bit logical operation unit using a 4-to-1 multiplexer.
+--
+--
+-- Operation:
+--   - The signals `opr` store the possible operations:
+--     opr(0) = A AND B
+--     opr(1) = A OR B
+--     opr(2) = A XOR B
+--     opr(3) = NOT A
+--
+--   - A MUX4to1 selects one of these operations based on `S`.
+
+-- Truth Table:
+--   S1 S0 | Operation  | Output (ei)
+--  -------------------------------
+--    0  0 | A AND B   | A AND B
+--    0  1 | A OR B    | A OR B
+--    1  0 | A XOR B   | A XOR B
+--    1  1 | NOT A     | NOT A
+--
+--   Each logicX1 unit performs this operation on a single bit.
+--   When used in the LOGIC entity, 16 instances operate bitwise on vectors.
+
